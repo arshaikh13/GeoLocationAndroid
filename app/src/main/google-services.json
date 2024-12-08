@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "80787683507",
+    "project_id": "ashaikh-wanna-go-app-fall",
+    "storage_bucket": "ashaikh-wanna-go-app-fall.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80787683507:android:7f4da12e4d95b78ea018c6",
+        "android_client_info": {
+          "package_name": "com.example.placesdemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJoc78mKFMDacQqf9sqQH7VAxC9FUBolw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

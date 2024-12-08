@@ -1,29 +1,34 @@
-package com.example.placesdemo
+package com.example.placesdemo.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.placesdemo.databinding.ListItemMarkerBinding
 
-class MarkerAdapter(private val markers: List<Pair<String, String>>) : RecyclerView.Adapter<MarkerAdapter.MarkerViewHolder>() {
+class MarkerAdapter(private var markers: List<Pair<String, String>>) : RecyclerView.Adapter<MarkerAdapter.MarkerViewHolder>() {
 
-    class MarkerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(android.R.id.text1)
+    fun updateData(newMarkers: List<Pair<String, String>>) {
+        markers = newMarkers
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarkerViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
-        return MarkerViewHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ListItemMarkerBinding.inflate(inflater, parent, false)
+        return MarkerViewHolder(binding)
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MarkerViewHolder, position: Int) {
-        val marker = markers[position]
-        holder.textView.text = "${marker.first}\n${marker.second}"
+        val (title, subtitle) = markers[position]
+        holder.bind(title, subtitle)
     }
 
     override fun getItemCount(): Int = markers.size
-}
 
+    class MarkerViewHolder(private val binding: ListItemMarkerBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(title: String, subtitle: String) {
+            binding.markerTitle.text = title
+            binding.markerSubtitle.text = subtitle
+        }
+    }
+}

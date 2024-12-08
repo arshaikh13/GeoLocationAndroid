@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/visitFragment"
+        android:title="Places to Visit"
+        android:icon="@drawable/visit"
+        />
+
+    <item
+        android:id="@+id/avoidFragment"
+        android:title="Places to Avoid"
+        android:icon="@drawable/avoid"
+        />
+</menu>
